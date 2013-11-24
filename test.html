@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="August" />
+	<title>jq-page-monitor test</title>
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<script src="jq-page-monitor.js"></script>
+</head>
+<body>
+	15秒内没有操作网页，将弹出提示！
+<script type="text/javascript">
+	//test case
+	$.jqPageMonitor({
+		duration: 15 * 1000, //设置15s没有操作网页，则执行回调函数
+		step: 2000	//检查间隔，建议不要设置过小
+	}, function() {
+		alert('亲，您已经15秒没有操作过该网页了！');
+	}).start();
+</script>
+</body>
+</html>
