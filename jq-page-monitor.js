@@ -1,3 +1,20 @@
+/**
+ * 一个可以监控网页是否被操作的jQuery插件，如果用户长时间没有操作网页，网页会做出相应提示。
+ * 
+ * @author August Dong <august_dong@yahoo.com>
+ * @date 2013.11.24
+ *
+ * @example
+ * $.jqPageMonitor({
+ *     duration: 15 * 1000, //设置15s没有操作网页，则执行回调函数
+ *	   step: 2000	//检查间隔，建议不要设置过小
+ * }, function() {
+ *	   alert('亲，您已经15秒没有操作过该网页了！');
+ * }).start();
+ *
+ * @requires jQuery
+ *
+ */
 ;(function($) {
 
 	var curTime = 0,
